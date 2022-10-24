@@ -1,7 +1,11 @@
 package Week2;
 
 import java.util.Scanner;
-
+// 문제
+//제품(Product)은 가격(Price)과 제품명(Name) 정보를 포함한다.
+//여기에서는 제품 중 TV의 정보만이 주어진다.
+//TV 정보를 입력 받아 배열에 저장하고,
+//첫 번째 TV와 비교하여 세금을 포함한 가격이 높은 TV를 출력하는 프로그램을 작성하시오.
 interface Comparable {
     public int compareTo(Object o);
 }
@@ -60,6 +64,7 @@ public class Cote_2 {
                 String name = sc.nextLine().trim();
 
                 p[index] = new TV(price, taxRate, name);
+                
                 if (((TV)p[index]).compareTo((TV)p[0]) >= 0) // 기준비교값이 비교대상값과 같거나 클때 index를 1씩증가
                     ++index;                                 // 즉, 첫번째 제품의 세금 포함 가격보다 비싼제품을 출력
             } catch (Exception e) {
